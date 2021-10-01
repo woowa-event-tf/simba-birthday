@@ -170,3 +170,13 @@ main h1 {
     font-size: 1rem;
   }
 }
+
+.visually-hidden {
+  visibility: hidden;
+}
+
+.audio {
+  position: fixed;
+  bottom: -1000px;
+  left: 0;
+}

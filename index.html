@@ -19,12 +19,24 @@
   <div class="audience">
 
   </div>
+
+  <audio class="yeah-audio visually-hidden">
+    <source src="./assets/yeahSound.MP3" type="audio/mpeg">
+  </audio>
+
+  <iframe class="bgm visually-hidden audio" width="560" height="315" src="https://www.youtube.com/embed/GibiNy4d4gc"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
 </body>
 
 <script>
   const $letter = document.querySelector('.letter');
   const $audience = document.querySelector('.audience');
   const $simba = document.querySelector('.simba');
+
+  const $yeahAudio = document.querySelector('.yeah-audio');
+  const $bgm = document.querySelector('.bgm');
 
   let timeoutId;
 
@@ -44,6 +56,8 @@
 
     $letter.classList.add('letter-up-animation');
     $audience.classList.add('pou-up');
+
+    $yeahAudio.play();
 
     timeoutId = setTimeout(() => {
       $letter.classList.remove('letter-up-animation');
