@@ -45,7 +45,7 @@
     $letter.classList.add('letter-up-animation');
     $audience.classList.add('pou-up');
 
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       $letter.classList.remove('letter-up-animation');
       $audience.classList.remove('pou-up');
     }, 1000)
