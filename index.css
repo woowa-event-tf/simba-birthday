@@ -146,8 +146,84 @@ main h1 {
   animation: pop-up 0.25s ease-in-out infinite;
 }
 
+#modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #000000cc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-inner {
+  max-width: 320px;
+
+  padding: 1.5rem;
+
+  background-color: #f0f0f0;
+
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+strong {
+  font-size: 120%;
+  line-height: 2rem;
+}
+
+.modal-inner p {
+  font-size: 1rem;
+  line-height: 1.3;
+
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mute-button {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin-right: 0.4rem;
+
+  background-color: #d0d0d0;
+  border-radius: 0.3rem;
+}
+
+.close-button {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin-left: 0.4rem;
+
+  color: #fff;
+  background-color: #266442;
+  border-radius: 0.3rem;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (max-width: 475px) {

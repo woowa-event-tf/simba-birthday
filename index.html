@@ -24,10 +24,15 @@
     <source src="./assets/yeahSound.MP3" type="audio/mpeg">
   </audio>
 
-  <iframe class="bgm visually-hidden audio" width="560" height="315" src="https://www.youtube.com/embed/GibiNy4d4gc"
-    title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe>
+  <div role="dialog" id="modal">
+    <div class="modal-inner">
+      <p><strong>sound가 포함된 페이지 입니다.</strong><br />이어폰을 꽂거나, 카페 등에서 보고싶을 땐 아래 음소거 버튼을 눌러주세요.</p>
+      <div class="flex w-100 justify-space-between mt-2">
+        <button type="button" class="mute-button">음소거</button>
+        <button type="button" class="modal-close-button close-button">확인</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 <script>
@@ -37,6 +42,10 @@
 
   const $yeahAudio = document.querySelector('.yeah-audio');
   const $bgm = document.querySelector('.bgm');
+
+  const $modal = document.querySelector('#modal');
+  const $muteButton = document.querySelector('.mute-button');
+  const $modalCloseButton = document.querySelector('.modal-close-button');
 
   let timeoutId;
 
@@ -63,9 +72,16 @@
       $letter.classList.remove('letter-up-animation');
       $audience.classList.remove('pou-up');
     }, 1000)
-
-
   });
+
+  $modalCloseButton.addEventListener('click', () => {
+    $modal.classList.add('hidden');
+  })
+
+  $muteButton.addEventListener('click', () => {
+    $yeahAudio.volume = 0;
+    $modal.classList.add('hidden');
+  })
 
 </script>
 
