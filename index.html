@@ -37,6 +37,8 @@
   ]
 
   $simba.addEventListener('click', () => {
+    clearTimeout(timeoutId);
+
     $letter.textContent = letterList[count % 3];
     count++;
 
