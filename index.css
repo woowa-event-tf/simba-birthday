@@ -120,8 +120,7 @@ main h1 {
   translate: scale 0.1s ease;
 }
 
-.simba:active,
-.simba:hover {
+.simba:active {
   background-image: url('./assets/simba_up.jpeg');
 }
 
