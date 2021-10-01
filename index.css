@@ -27,6 +27,8 @@ button {
   border: none;
 
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 main {
@@ -114,10 +116,17 @@ main h1 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+
+  translate: scale 0.1s ease;
+}
+
+.simba:active,
+.simba:hover {
+  background-image: url('./assets/simba_up.jpeg');
 }
 
 .simba:active {
-  background-image: url('./assets/simba_up.jpeg');
+  transform: scale(0.99);
 }
 
 .audience {
@@ -149,7 +158,7 @@ main h1 {
 
   main {
     padding: 0 0.5rem;
-    padding-bottom: 100px;
+    padding-bottom: 130px;
   }
 
   .simba {
