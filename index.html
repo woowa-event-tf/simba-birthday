@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HBD Simba!</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <main>
+    <h1>Happy Birthday, Simba!</h1>
+    <div class="letter">심바 생일축하해~~ 맛있는거 많이 먹고 행복한 하루 보내길 바라!</div>
+    <div class="simba"></div>
+  </main>
+  <div class="audience">
+
+  </div>
+</body>
+
+<script>
+  const $letter = document.querySelector('.letter');
+  const $audience = document.querySelector('.audience');
+  const $simba = document.querySelector('.simba');
+
+  let timeoutId;
+
+  let count = 0;
+
+  const letterList = [
+    '심바 생일축하해~~ 맛있는거 많이 먹고 행복한 하루 보내길 바라!',
+    '파란피 심바 생축!',
+    '무슨 더미데이터 넣어놔야 하는걸까?'
+  ]
+
+  $simba.addEventListener('click', () => {
+    $letter.textContent = letterList[count % 3];
+    count++;
+
+    $letter.classList.add('letter-up-animation');
+    $audience.classList.add('pou-up');
+
+    setTimeout(() => {
+      $letter.classList.remove('letter-up-animation');
+      $audience.classList.remove('pou-up');
+    }, 1000)
+
+
+  });
+
+</script>
+
+</html>

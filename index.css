@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./assets/bg-image.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 200% 200%;
+}
+
+main {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 1rem;
+}
+
+main h1 {
+  color: white;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+@keyframes letter-up {
+  from {
+    transform: scale(0.9) translateY(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes pop-up {
+  50% {
+    transform: translateY(-2%);
+  }
+}
+
+.letter {
+  width: 480px;
+  min-height: 140px;
+
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  background-color: #fff;
+  border-radius: 0.5rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  word-break: keep-all;
+}
+
+.letter-up-animation {
+  animation: letter-up 1s ease;
+}
+
+.letter::after {
+  content: ' ';
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(90%);
+
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 16px solid #fff;
+  border-bottom: 16px solid transparent;
+}
+
+.simba {
+  width: 480px;
+  height: 380px;
+
+  background-image: url('./assets/simba_down.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.simba:active {
+  background-image: url('./assets/simba_up.jpeg');
+}
+
+.audience {
+  width: 100%;
+  height: 240px;
+
+  position: fixed;
+  bottom: -10%;
+  left: 0;
+
+  background-image: url('./assets/animals.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.audience.pou-up {
+  animation: pop-up 0.25s ease-in-out infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 475px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  .simba {
+    width: 300px;
+    height: 240px;
+  }
+
+  .letter {
+    width: 300px;
+    font-size: 1rem;
+  }
+}
