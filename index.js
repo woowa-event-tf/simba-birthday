@@ -1,6 +1,7 @@
 import messages from './messages.js';
 
 const $letter = document.querySelector('.letter');
+const $letterInner = document.querySelector('.letter-inner');
 const $audience = document.querySelector('.audience');
 const $simba = document.querySelector('.simba');
 
@@ -18,7 +19,8 @@ let count = 0;
 $simba.addEventListener('click', () => {
   clearTimeout(timeoutId);
 
-  $letter.textContent = messages[count % messages.length].message;
+  $letterInner.textContent = messages[count % messages.length].message;
+  $letterInner.scrollTo(0, 0);
   count++;
 
   $letter.classList.add('letter-up-animation');
