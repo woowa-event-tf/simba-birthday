@@ -13,7 +13,7 @@
 <body>
   <main>
     <h1>Happy Birthday, Simba!</h1>
-    <div type="button" class="letter">심바 생일축하해~~ 맛있는거 많이 먹고 행복한 하루 보내길 바라!</div>
+    <div type="button" class="letter">심바를 높게 들어올려보세요⬇⬇</div>
     <button class="simba" aria-label="메세지 보기"></button>
   </main>
   <div class="audience">
@@ -21,7 +21,7 @@
   </div>
 
   <audio class="yeah-audio visually-hidden">
-    <source src="./assets/yeahSound.MP3" type="audio/mpeg">
+    <source src="./assets/nabomking.mp3" type="audio/mpeg">
   </audio>
 
   <div role="dialog" id="modal">
@@ -35,54 +35,6 @@
   </div>
 </body>
 
-<script>
-  const $letter = document.querySelector('.letter');
-  const $audience = document.querySelector('.audience');
-  const $simba = document.querySelector('.simba');
-
-  const $yeahAudio = document.querySelector('.yeah-audio');
-  const $bgm = document.querySelector('.bgm');
-
-  const $modal = document.querySelector('#modal');
-  const $muteButton = document.querySelector('.mute-button');
-  const $modalCloseButton = document.querySelector('.modal-close-button');
-
-  let timeoutId;
-
-  let count = 0;
-
-  const letterList = [
-    '심바 생일축하해~~ 맛있는거 많이 먹고 행복한 하루 보내길 바라!',
-    '파란피 심바 생축!',
-    '무슨 더미데이터 넣어놔야 하는걸까?'
-  ]
-
-  $simba.addEventListener('click', () => {
-    clearTimeout(timeoutId);
-
-    $letter.textContent = letterList[count % 3];
-    count++;
-
-    $letter.classList.add('letter-up-animation');
-    $audience.classList.add('pou-up');
-
-    $yeahAudio.play();
-
-    timeoutId = setTimeout(() => {
-      $letter.classList.remove('letter-up-animation');
-      $audience.classList.remove('pou-up');
-    }, 1000)
-  });
-
-  $modalCloseButton.addEventListener('click', () => {
-    $modal.classList.add('hidden');
-  })
-
-  $muteButton.addEventListener('click', () => {
-    $yeahAudio.volume = 0;
-    $modal.classList.add('hidden');
-  })
-
-</script>
+<script src="./index.js" type="module" defer></script>
 
 </html>
